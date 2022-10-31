@@ -113,3 +113,6 @@ class Hero:
         if (newCombat < 0) or (newCombat > 105):
             raise ValueError('New combat must be between 0 and 105.')
         self.__combat = newCombat
+
+    def __str__(self):
+        return 'I am a Hero'
