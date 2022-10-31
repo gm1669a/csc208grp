@@ -21,4 +21,3 @@ class Battle:
         else:
             self.hero.ties += 1
             self.villain.ties += 1
-

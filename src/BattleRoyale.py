@@ -5,11 +5,9 @@ from HumanVillain import HumanVillain
 from Villain import Villain
 from Hero import Hero
 
-
-
 with open('../SuperpowerDataset.csv') as csvfile:
-    reader = csv.DictReader(csvfile, delimiter=',')
 
+    reader = csv.DictReader(csvfile, delimiter=',')
     powerList = []
 
     for row in reader:
