@@ -56,3 +56,4 @@ for i in range(len(powerList)):
 
 for i in range(len(powerList)):
     print(powerList[i].name, powerList[i].wins, powerList[i].losses, powerList[i].ties)
+
