@@ -1,20 +1,26 @@
-class Main:
-    def __init__(self):
-        self.powerList = []
-        self.heroList = []
-        self.villainList = []
-        self.battleList = []
+from src.Battle import Battle
 
-    def main(self):
-        self.powerList = BattleRoyale().getPowerList()
-        self.heroList = BattleRoyale().getHeroList()
-        self.villainList = BattleRoyale().getVillainList()
-        self.battleList = BattleRoyale().getBattleList()
-        for battle in self.battleList:
-            battle.fight()
-        for hero in self.heroList:
-            print(hero.name, 'wins:', hero.wins, 'losses:', hero.losses, 'ties:', hero.ties)
-        for villain in self.villainList:
-            print(villain.name, 'wins:', villain.wins, 'losses:', villain.losses, 'ties:', villain.ties)
-        for character in self.powerList:
-            print(character.name, 'wins:', character.wins, 'losses:', character.losses, 'ties:', character.ties)
+
+with open('SuperpowerDataset.csv') as f:
+    data = f.read()
+
+characters = data.split()
+
+wins = {}
+losses = {}
+
+for character in characters:
+    for other in characters:
+        if character == other:
+            continue
+        if character in wins and other in losses and other in wins[character]:
+            wins[character] += 1
+        elif character in losses and other in wins and other in losses[character]:
+            losses[character] += 1
+        else:
+            wins[character] = 1
+            losses[character] = 1
+
+# print the results
+print('wins:', wins)
+print('losses:', losses)
