@@ -7,6 +7,9 @@ class Villain:
         self.durability = durability
         self.power = power
         self.combat = combat
+        self.wins = 0
+        self.losses = 0
+        self.ties = 0
 
     def getStats(self):
         threeStatsSum = self.strength + self.durability + self.combat
