@@ -11,19 +11,9 @@ class SuperPower:
         self.losses = 0
         self.ties = 0
 
-    def getStats(self):
-        threeStatsSum = self.intelligence + self.speed + self.power
-        return threeStatsSum
-
-    def getBonus(self):
-        bonus = 0
-        strength = int(self.strength)
-        combat = int(self.combat)
-        if strength >= 85:
-            bonus += 5
-        if combat >= 90:
-            bonus += 10
-        return bonus
+    def getScore(self):
+        score = self.wins + (self.ties * 0.5)
+        return score
 
     @property
     def name(self):
