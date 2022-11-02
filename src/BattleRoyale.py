@@ -39,9 +39,9 @@ with open('../SuperpowerDataset.csv') as csvfile:
                 oName.getBonus()
         powerList.append(oName)
 
-# WE NEED TO MAKE SURE CHARACTERS FIGHT IN EACH MATCH ONCE
+
 for i in range(len(powerList)):
-    for j in range(len(powerList)):
+    for j in range(i, len(powerList)):
         if i != j:
             if powerList[i].getStats() + powerList[i].getBonus() > powerList[j].getStats() + powerList[j].getBonus():
                 powerList[i].wins += 1
@@ -71,6 +71,5 @@ for character in powerList:
         losingCharacter = character.name
 print('The character with the best record was', winningCharacter, 'with a score of', str(winningScore))
 print('The character with the worst record was', losingCharacter, 'with a score of', str(losingScore))
-
 
 
